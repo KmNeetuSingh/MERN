@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Page</title>
-  <link rel="stylesheet" href="./style.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
 
-    article {
-      max-width: 800px;
-      margin: auto;
-    }
+      article {
+        max-width: 800px;
+        margin: auto;
+      }
 
-    figure {
-      max-width: 100%;
-      margin: 20px 0;
-      text-align: center;
-    }
+      figure {
+        max-width: 100%;
+        margin: 20px 0;
+        text-align: center;
+      }
 
-    figcaption {
-      font-size: 14px;
-      color: #555;
-      margin-top: 10px;
-    }
+      figcaption {
+        font-size: 14px;
+        color: #555;
+        margin-top: 10px;
+      }
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
 
-    aside {
-      background: #f5f5f5;
-      padding: 15px;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
+      aside {
+        background: #f5f5f5;
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main-content">
+      <article>
+        <section>
+          <h1>Welcome to the Blog</h1>
+          <p>This is the introduction to our awesome blog post.</p>
+        </section>
 
-  <main id="main-content">
-    <article>
-      <section>
-        <h1>Welcome to the Blog</h1>
-        <p>This is the introduction to our awesome blog post.</p>
-      </section>
+        <section>
+          <figure>
+            <picture>
+              <source srcset="./a.jpg" media="(min-width: 768px)" />
+              <source srcset="./download.jpg" media="(max-width: 767px)" />
+              <img src="./a.jpg" alt="Responsive blog image" />
+            </picture>
+            <figcaption>
+              A responsive image that adjusts based on screen size.
+            </figcaption>
+          </figure>
+        </section>
 
-      <section>
-        <figure>
-          <picture>
-            <source srcset="a.jpeg" media="(min-width: 768px)">
-            <source srcset="download.jpeg" media="(max-width: 767px)">
-            <img src="a.jpeg" alt="Responsive blog image">
-          </picture>
-          <figcaption>A responsive image that adjusts based on screen size.</figcaption>
-        </figure>
-      </section>
+        <section>
+          <p>
+            This section contains the main content of the blog post. You can
+            break it into more sections if needed.
+          </p>
+        </section>
 
-      <section>
-        <p>This section contains the main content of the blog post. You can break it into more sections if needed.</p>
-      </section>
-
-      <aside>
-        <p><strong>Author:</strong> John Doe</p>
-        <p><strong>Published:</strong> May 9, 2025</p>
-      </aside>
-    </article>
-  </main>
-
-</body>
+        <aside>
+          <p><strong>Author:</strong> John Doe</p>
+          <p><strong>Published:</strong> May 9, 2025</p>
+        </aside>
+      </article>
+    </main>
+  </body>
 </html>
