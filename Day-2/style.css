@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(59, 130, 246);
+  background-color: rgb(59, 246, 174);
   padding: 10px 20px;
   position: relative; /* Needed for positioning dropdown */
 }
@@ -48,7 +48,7 @@
   .links {
     display: none;
     flex-direction: column;
-    background-color: rgb(59, 130, 246);
+    background-color: rgb(59, 246, 190);
     position: absolute;
     top: 60px;
     right: 20px;
@@ -60,4 +60,19 @@
   .links.show {
     display: flex;
   }
+}
+.main-content {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./a.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  text-align: center;
 }
