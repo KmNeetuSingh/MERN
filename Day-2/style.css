@@ -1,7 +1,63 @@
-.nav{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(59, 130, 246);
+  padding: 10px 20px;
+  position: relative; /* Needed for positioning dropdown */
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}
+
+.links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(59, 130, 246);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .links.show {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #864444;
-    padding: 10px 20px;
+  }
 }
