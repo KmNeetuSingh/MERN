@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/MyFont.woff2') format('woff2');
+}
+
+body {
+  font-family: 'MyFont', sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
@@ -27,4 +35,17 @@ html,body{
 
 .flex-wrap img {
   width: 150px;
+}
+.column {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+}
+
+.left {
+  background: #f0f0f0;
+}
+
+.right {
+  background: #e0e0e0;
 }
