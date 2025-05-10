@@ -19,3 +19,12 @@ html,body{
     margin-right:12px;
     width :12px;
 }
+.flex-wrap {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.flex-wrap img {
+  width: 150px;
+}
