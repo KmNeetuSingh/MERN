@@ -14,3 +14,8 @@ html,body{
     box-shadow: none;
     background-color: aqua;
 }
+.float-img{
+    float: left;
+    margin-right:12px;
+    width :12px;
+}
