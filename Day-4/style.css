@@ -6,19 +6,11 @@
 }
 
 /* Custom web font */
-@font-face {
-  font-family: 'CustomFont';
-  src: url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
-}
 
 /* Body styles */
 body {
   height: 100%;
   width: 100%;
-  background-color: #f0f9ff; /* Light sky blue */
-  font-family: 'CustomFont', Arial, sans-serif;
-  padding: 20px;
-  color: #333;
 }
 
 /* Card styles */
