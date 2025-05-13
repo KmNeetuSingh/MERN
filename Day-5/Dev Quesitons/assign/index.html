@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .even { background-color: #f0f0f0; }
+    #backToTop {
+      position: fixed; bottom: 30px; right: 30px;
+      display: none; padding: 10px 15px;
+      background: #333; color: white; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 1: Debounce on input -->
+  <h2>Live Search (Debounced)</h2>
+  <input type="text" id="searchInput" placeholder="Type to search..." />
+
+  <!-- Task 2: Tab Switcher -->
+  <h2>Tab Switcher</h2>
+  <div>
+    <button class="tab-btn" data-target="tab1">Tab 1</button>
+    <button class="tab-btn" data-target="tab2">Tab 2</button>
+  </div>
+  <div id="tab1" class="tab-content active">This is content for Tab 1</div>
+  <div id="tab2" class="tab-content">This is content for Tab 2</div>
+
+  <!-- Task 3: Even-indexed styling -->
+  <h2>List Highlight</h2>
+  <ul id="itemList">
+    <li>Item 0</li>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+
+  <!-- Task 4: Back to Top -->
+  <div style="height: 1500px;"></div>
+  <div id="backToTop">↑ Back to Top</div>
+
+  <!-- Task 5: Import utility functions -->
+  <script type="module">
+    // utils.js logic (ES module inlined for demo purposes)
+    const debounce = (fn, delay) => {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    };
+
+    const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+    // Exported module-like logic (can be moved to real .js files)
+    export const utils = { debounce, capitalize };
+
+    // Simulate importing from 'utils.js'
+    import('./main.js').then(({ runApp }) => runApp(utils));
+  </script>
+
+  <!-- main.js module simulation -->
+  <script type="module" id="main-script">
+    export function runApp({ debounce, capitalize }) {
+      // Task 1: Debounced search
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('keyup', debounce((e) => {
+        console.log('Searching for:', capitalize(e.target.value));
+      }, 500));
+
+      // Task 2: Tab switcher
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+          document.getElementById(btn.dataset.target).classList.add('active');
+        });
+      });
+
+      // Task 3: Add class to even-indexed list items
+      document.querySelectorAll('#itemList li').forEach((li, idx) => {
+        if (idx % 2 === 0) li.classList.add('even');
+      });
+
+      // Task 4: Back to top button
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+          backToTop.style.display = 'block';
+        } else {
+          backToTop.style.display = 'none';
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
+
+</body>
+</html>
