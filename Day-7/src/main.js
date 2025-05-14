@@ -1,24 +1,15 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+document.getElementById('btn').addEventListener('click', async () => {
+  const num1 = parseFloat(document.getElementById('num1').value);
+  const num2 = parseFloat(document.getElementById('num2').value);
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  if (isNaN(num1) || isNaN(num2)) {
+    document.getElementById('result').textContent = 'Please enter valid numbers.';
+    return;
+  }
 
-setupCounter(document.querySelector('#counter'))
+  // 🧠 Dynamically import the add function
+  const { add } = await import('./utils/calc.js');
+  const result = add(num1, num2);
+
+  document.getElementById('result').textContent = `Result: ${result}`;
+});
