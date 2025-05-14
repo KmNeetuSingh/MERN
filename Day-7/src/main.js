@@ -1,3 +1,4 @@
+// src/main.js
 document.getElementById('btn').addEventListener('click', async () => {
   const num1 = parseFloat(document.getElementById('num1').value);
   const num2 = parseFloat(document.getElementById('num2').value);
@@ -7,7 +8,7 @@ document.getElementById('btn').addEventListener('click', async () => {
     return;
   }
 
-  // 🧠 Dynamically import the add function
+  // Dynamically import the add function from utils
   const { add } = await import('./utils/calc.js');
   const result = add(num1, num2);
 
