@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(59, 246, 174);
+  padding: 10px 20px;
+  position: relative; /* Needed for positioning dropdown */
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}
+
+.links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(59, 246, 190);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .links.show {
+    display: flex;
+  }
+}
+.main-content {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./a.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 1000;
+  background-color: #000;
+  color: #670808;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  left: 20px;
+  top: 20px;
+  width: auto;
+  height: auto;
+}

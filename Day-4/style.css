@@ -1,0 +1,99 @@
+/* Universal reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom web font */
+
+/* Body styles */
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Card styles */
+.card {
+  border: 1px solid #ff8ab8;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 15px;
+  width: 320px;
+  position: relative;
+  background-color: #fff0f6; /* light pink */
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Card header with tooltip */
+.card-header {
+  background-color: #ffe066; /* pastel yellow */
+  border-bottom: 1px solid #ff6f61;
+  padding: 10px 15px;
+  float: right;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Tooltip using pseudo-elements */
+.card-header::before {
+  content: "You are amazing! 🌟";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.card-header:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Card body */
+.card-body {
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+/* Image with float for text wrapping */
+img.float-img {
+  float: left;
+  margin: 0 15px 10px 0;
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Two-column layout using inline-block */
+.column {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #e0f7fa; /* light teal */
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.column:last-child {
+  margin-right: 0;
+}
