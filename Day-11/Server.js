@@ -51,7 +51,7 @@ if (cluster.isMaster) {
     }
 
     else if (url === '/stream') {
-      // Task 2: Stream large file
+     // Task 2: Stream large file
       const filePath = path.join(__dirname, 'large-file.txt');
       const readStream = fs.createReadStream(filePath);
       res.writeHead(200, { 'Content-Type': 'text/plain' });

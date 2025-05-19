@@ -3,11 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Custom Element Example</title>
+    <style>
+      body {
+        background-color: #0a0f1a;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .video-theme {
+        background: linear-gradient(145deg, #006994, #00b4d8);
+        padding: 20px;
+        border-radius: 20px;
+        width: fit-content;
+        margin: 30px auto;
+        box-shadow: 0 12px 30px rgba(0, 200, 255, 0.3);
+        border: 2px solid #ffffff30;
+      }
+
+      video {
+        display: block;
+        max-width: 100%;
+        border-radius: 12px;
+      }
+
+      /* 📜 Water-themed text below video */
+      .video-description {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin-inline: auto;
+        line-height: 1.6;
+        color: #e0f7fa;
+      }
+
+      reet-el, neet-element {
+        background-color: #003049;
+        color: white;
+        padding: 8px 16px;
+        display: inline-block;
+        margin: 10px;
+        border-radius: 8px;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 180, 255, 0.2);
+      }
+
+      button {
+        background-color: #0077b6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #00b4d8;
+      }
+    </style>
   </head>
   <body>
-    <p>hello world</p>
-    <button>Button 1</button>
+    <div class="video-theme">
+      <video controls autoplay loop width="400" height="400">
+        <source src="video.mp4" type="video/mp4" />
+        <track src="captions.vtt" kind="subtitles" srclang="en" label="English" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- 🌊 Descriptive Text -->
+    <div class="video-description">
+      Dive into the tranquil beauty of the ocean. 🌊<br />
+      Watch the gentle waves ripple under the soft sunlight, a soothing dance of nature that reminds us to breathe, flow, and let go.<br />
+      Perfect for moments of calm, focus, or pure appreciation of the sea’s timeless rhythm.
+    </div>
+
+    <neet-element></neet-element>
+    <reet-el></reet-el>
+    <button>Button 1</button> 
     <button>Button 2</button>
+    <script>
+      class MyElement extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = "<h1>The way we want to be here, so yeah, we are here!</h1>";
+        }
+      }
+
+      class Door extends HTMLElement {
+        connectedCallback() {
+          this.innerText = "I am Neetu";
+        }
+      }
+
+      customElements.define("neet-element", MyElement);
+      customElements.define("reet-el", Door);
+    </script>
   </body>
 </html>
