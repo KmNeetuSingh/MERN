@@ -10,7 +10,7 @@ todorouter.post("/add", async (req, res) => {
     res.status(201).json({ message: "Todo added", todo: newTodo });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ message: "Something went wrong Please check the log" });
   }
 });
 
