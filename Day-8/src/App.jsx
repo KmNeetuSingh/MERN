@@ -6,7 +6,7 @@ const TodoItem = memo(({ todo, toggleTodo, removeTodo }) => {
   return (
     <li
       style={{
-        textDecoration: todo.completed ? "line-through" : "none",
+        textDecoration: todo.completed ? "line-through" : "none"
         cursor: "pointer",
       }}
       onClick={() => toggleTodo(todo.id)}
