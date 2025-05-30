@@ -1,6 +1,6 @@
  import React, { useReducer, useEffect } from "react";
 
-// 1. useWindowSize hook
+// Assign 1 : use window
 function useWindowSize() {
   const [windowSize, setWindowSize] = React.useState({
     width: window.innerWidth,
@@ -23,7 +23,7 @@ const ThemeContext = React.createContext();
 
 function ThemeProvider({ children }) {
   const [theme, setTheme] = React.useState("light");
-  const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
+  const toggleTheme = () => setTheme((t) => (t === "light" ? "Dark" : "light"));
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
