@@ -3,7 +3,7 @@ export default function About() {
     <div style={styles.container}>
       <h2 style={styles.title}>About This App</h2>
       <p style={styles.description}>
-        This is a demo React app featuring routing, lazy loading, list virtualization, and performance measurement.
+        This is a demo React.. app featuring routing, lazy loading, list virtualization, and performance measurement.
       </p>
     </div>
   );
