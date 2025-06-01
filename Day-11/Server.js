@@ -30,7 +30,7 @@ class MyEmitter {
 const numCPUs = os.cpus().length;
 
 if (cluster.isMaster) {
-  console.log(`👑 Master process ${process.pid} is running`);
+  console.log(`👑 Master... process ${process.pid} is running`);
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }

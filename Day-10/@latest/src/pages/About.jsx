@@ -11,7 +11,7 @@ export default function About() {
 
 const styles = {
   container: {
-    maxWidth: 600,
+    maxWidth: 700,
     margin: "3rem auto",
     padding: "2rem",
     backgroundColor: "#f0f4f8",
