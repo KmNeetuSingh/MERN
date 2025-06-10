@@ -1,9 +1,17 @@
-function Reverse(num){
-    let  a = 0
-    while(num >0){
-        a = a*10 +num %10
-        num  = Math.floor(num/10)
+function removed(arr){
+    let res = []
+    for(let i = 0 ; i <arr.length ; i++){
+        let duplicate = false 
+        for(let j = 0 ; j <res.length ; j++){
+            if(arr[i] === res[j]){
+                duplicate = true
+                break
+            }
+        }
+        if(!duplicate){
+            res.push(arr[i])
+        }
     }
-    return a
+    return res
 }
-console.log(Reverse(1233))
+console.log(removed([1,2,3,3,45,4]))
