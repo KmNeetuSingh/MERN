@@ -1,8 +1,16 @@
-function anagram(str){
-    let a = " "
-    for (let i = str.length-1 ; i >=0 ; i--){
-       a += str[i]
+function falttedArray(arr){
+    let res = []
+    for(let i = 0 ; i <arr.length ; i++){
+        if(Array.isArray(arr[i])){
+            for(let j = 0 ; j <arr[i].length ; j++){
+                res.push(arr[i][j])
+            }
+
+        }
+        else {
+            res.push(arr[i])
+        }
     }
-    return a
+    return res
 }
-console.log(anagram("listen"))
+console.log(falttedArray([1,2,3,[4,5]]))
