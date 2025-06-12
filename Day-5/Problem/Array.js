@@ -25,3 +25,6 @@ const users = Object.values(output).flat()
 const totoalage = users.reduce ((acc, curr) => acc  +  curr.age , 0 )
 const averageage = totoalage/users.length
 console.log(averageage)
+
+let java = "javascript"
+console.log(java.slice(3))
