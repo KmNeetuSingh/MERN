@@ -1,0 +1,10 @@
+const numbers  = [1,2,3,4,5,6,7,8,9]
+const filternumbers = numbers.filter(num => num %2 === 0)
+console.log(filternumbers)
+const mapnumbers = numbers .map(num => num * num )
+console.log(mapnumbers)
+const  reducenumbers = numbers.reduce((acc, curr) => acc+ curr , 0)
+console.log(reducenumbers)
+const mapnum = numbers.map(num => num %2=== 0).filter(num => num > 10 )
+const somenumbers = numbers.some(num => num %7 === 0)
+console.log(somenumbers)
