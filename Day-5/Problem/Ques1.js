@@ -13,4 +13,4 @@ function falttedArray(arr){
     }
     return res
 }
-console.log(falttedArray([1,2,3,[4,5]]))
+console.log(falttedArray([1,2,3[4,5]]))
