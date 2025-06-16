@@ -1,4 +1,4 @@
-function removedduplicate(arr){
+function duplicate(arr){
     let res = []
     for(let i = 0 ; i <arr.length ; i++){
         let duplicate = false
@@ -12,7 +12,6 @@ function removedduplicate(arr){
             res.push(arr[i])
         }
     }
-    return res
-
+     return res
 }
-console.log(removedduplicate([1,1,12,2,3]))
+console.log(duplicate([1,2,3,4,5,5,6]))
