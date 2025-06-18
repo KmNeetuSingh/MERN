@@ -4,3 +4,4 @@
     let res = a.concat(b)
     console.log(res)
     console.log(arr)
+    
