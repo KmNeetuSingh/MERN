@@ -9,9 +9,10 @@ function duplicate(arr) {
       }
     }
     if (!duplicate) {
-      res.push(arr[i])
+      res.push(arr[i]);
     }
-  }return res
+  }
+  return res;
 }
 
-console.log(duplicate([1,2,3,1,1,3]))
+console.log(duplicate([1, 2, 3, 1, 1, 3]));
