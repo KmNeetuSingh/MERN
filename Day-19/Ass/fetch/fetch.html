@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "userContainer"></div>
+</body>
+</html>
+<script>
+    async function fetchUsers() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users");
+    let data = await response.json();
+    let container = document.getElementById("userContainer");
+    data.forEach(user => {
+        let userBox = document.createElement("div");
+        userBox.innerHTML = `<p>${user.name}</p>`;
+        container.appendChild(userBox);
+    });
+}
+fetchUsers();
+
+    
+</script>

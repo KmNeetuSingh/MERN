@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click">Click me</button>
+  </body>
+</html>
+<script>
+  const apiCalling = () => {
+    console.log("api call in progress");
+  };
+  const debouncing = (func, delay) => {
+    // should remember  if the call is called
+    let debouncing;
+    return function () {
+      debouncing && clearTimeout(delay);
+      debouncing = setTimeout(() => func.apply(this, arguments), delay);
+    };
+  };
+  window.addEventListener("load", function () {
+    var btn = document.getElementById("click");
+    // const fn = debouncer(apiCalling , 1000)
+    btn.addEventListener("click", debouncer(apiCalling, 1000));
+  });
+</script>

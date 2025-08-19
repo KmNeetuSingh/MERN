@@ -1,8 +1,9 @@
-function reve(str) {
-    let s = ""
-    for (let i = str.length- 1; i >= 0 ; i--){
-        s += str[i]
+function reverseste(str){
+    let res = []
+    for(let i = str.length-1 ; i >=0 ; i--){
+        res += str[i]
     }
-    return s
+    return res
+
 }
-console.log(reve("hello"))
+console.log(reverseste("asde"))

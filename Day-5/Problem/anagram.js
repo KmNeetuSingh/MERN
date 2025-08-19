@@ -1,6 +1,6 @@
-function anagram (str1 , str2 ){
+function anagram(str1, str2){
     let a = str1.split('').sort().join('')
-    let b = str2.split('').sort().join('')
-    return a === b
+    let n = str2.split('').sort().join('')
+    return a === n
 }
-console.log(anagram("listen" , "silent"))
+console.log(anagram("listen", "silent"))
