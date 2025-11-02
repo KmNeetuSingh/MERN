@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const cluster = require('cluster');
-const os = require('os');
+const o
 
 // ----- Task 3: Custom EventEmitter -----
 class MyEmitter {
